@@ -1,4 +1,4 @@
-# ポートフォリオ投稿サービス（仮）
+# SAKUHINSHU
 
 ## ナニコレ
 ひとことでまとめると、ポートフォリオのギャラリーサイトです。
@@ -32,15 +32,20 @@
 |favorite|お気に入り機能(0か1)|integer|
 
 ## URI設計
-### hoge
 |メソッド|URI|内容|
 |:-|:-|:-|
-|GET|/||
+|GET|/|投稿一覧&ログインや新規登録、投稿、検索など|
+|GET|/home|自分のお気に入りや自分のポートフォリオがみれる|
+|POST|/search|検索結果|
+|GET|/edit/:id|編集|
+|POST|/delete/:id|削除|
+|POST|/update/:id|編集のうらがわ|
+|POST|/comment|コメンt|
 
 ## View設計
-### hoge
 |ページ|内容|
 |:-|:-|
+|layout.erb|見た目|
 |index.erb|トップ|
 |signup.erb|新規登録|
 |new.erb|投稿|

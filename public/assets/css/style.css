@@ -1,6 +1,7 @@
   * {
     margin: 0;
     padding: 0;
+    font-family: 'Yu-Gothic';
   }
 
   nav {
@@ -10,8 +11,8 @@
   }
 
   nav a {
-    font-family: 'Righteous',
-      cursive;
+    font-family: 'Josefin Sans',
+      'Yu-Gothic', sans-serif;
     color: white;
     text-decoration: none;
     margin-left: 15px;
@@ -22,8 +23,8 @@
     background-color: aliceblue;
   }
 
-	.first-view {
-	  height: 350px;
+  .first-view {
+    height: 350px;
     width: 100%;
     padding-top: 170px;
     background-image: url("/assets/imgs/mic.jpg");
@@ -32,7 +33,7 @@
   }
 
   .first-view h1 {
-    font-family: 'Righteous', cursive;
+    font-family: 'Josefin Sans', sans-serif;
     color: white;
   }
 

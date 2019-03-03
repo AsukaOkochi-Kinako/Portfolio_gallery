@@ -12,8 +12,6 @@ require 'json'
 require "sinatra/json"
 require './image_uploader.rb'
 
-#おにく
-
 enable :sessions
 
 helpers do
@@ -23,7 +21,6 @@ helpers do
 end
 
 get '/' do
-  @posts = Post.all
   erb :index
 end
 
@@ -49,6 +46,10 @@ post '/signup' do
   redirect '/'
 end
 
+get '/signin' do
+  erb :signin
+end
+
 post '/signin' do
   user = User.find_by(name: params[:name])
   if user && user.authenticate(params[:password])
@@ -57,52 +58,7 @@ post '/signin' do
   redirect '/'
 end
 
-get '/search' do
-  erb :search
-end
-
-post '/search' do
-  keyword = params[:keyword]
-  uri = URI("https://itunes.apple.com/search")
-  uri.query = URI.encode_www_form({ term: keyword, country: "US", media: "music", limit: 10 })
-  res = Net::HTTP.get_response(uri)
-  returned_json = JSON.parse(res.body)
-  @musics = returned_json["results"]
-  erb :search
-end
-
-post '/new' do
-  Post.create(music_image: params[:music_image],artist: params[:artist],album: params[:album],track: params[:track],sample_music: params[:sample_music],comment: params[:comment],user_id: current_user.id,post_user: current_user.name)
-  redirect '/home'
-end
-
 get '/signout' do
   session[:user] = nil
   redirect '/'
-end
-
-get '/home' do
-  if current_user.nil?
-    @posts = Post.none
-  else
-    @posts = current_user.posts
-  end
-  erb :home
-end
-
-get '/edit/:id' do
-  @post = Post.find(params[:id])
-  erb :edit
-end
-
-post '/edit/:id' do
-  post = Post.find(params[:id])
-  post.comment = params[:comment]
-  post.save
-  redirect "/home"
-end
-
-get '/delete/:id' do
-  Post.find(params[:id]).delete
-  redirect '/home'
 end
