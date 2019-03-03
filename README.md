@@ -30,6 +30,7 @@
 |site_url|投稿したポートフォリオサイトのURL|string|
 |comment|ポートフォリオに対する意見や感想など|text|
 |favorite|お気に入り機能(0か1)|integer|
+|site_about|ポートフォリオサイトの詳細コメント|text|
 
 ## URI設計
 |メソッド|URI|内容|

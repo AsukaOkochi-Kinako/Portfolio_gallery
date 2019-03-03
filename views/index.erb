@@ -1,0 +1,21 @@
+<section class="center-vertical">
+  <h1>最新の投稿</h1>
+  <div class="center-hrizontal">
+    <% if !@posts.nil? %>
+      <div class="center-vertical">
+          <div class="center-hrizontal">
+            <% @posts.each do |post| %>
+              <div class="post center-vertical">
+                <p>サイト名:<%= post.site_name %></p>
+                <p>URL:<%= post.site_url %></p>
+                <p>コメント:<%= CGI.escapeHTML(post.site_about) %></p>
+                <p>投稿者:<%= post.name %></p>
+              </div>
+            <% end %>
+          </div>
+      </div>
+      <% else %>
+        投稿がありません
+      <% end %>
+  </div>
+</section>

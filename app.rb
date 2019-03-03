@@ -62,3 +62,12 @@ get '/signout' do
   session[:user] = nil
   redirect '/'
 end
+
+get '/new' do
+  erb :new
+end
+
+post '/new' do
+  Post.create(site_name: params[:site_name],site_url: params[:site_url],site_about: params[:site_about],post_user: current_user.name)
+  redirect '/'
+end

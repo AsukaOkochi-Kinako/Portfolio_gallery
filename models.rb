@@ -7,11 +7,14 @@ end
 
 class User < ActiveRecord::Base
   has_secure_password
-  has_secure_password
   validates :name,
     presence: true,
     format: { with: /\A\w+\z/ }
   validates :password,
     length: { in: 4..10 }
     has_many :posts
+end
+
+class Post < ActiveRecord::Base
+  belongs_to :user
 end

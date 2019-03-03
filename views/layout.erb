@@ -12,21 +12,25 @@
 </head>
 <body>
   <nav class="center-hrizontal">
-    <a href="/">SAKUHINSHU</a>
-    <% if current_user.nil? %>
-      <a href="/signup">新規登録</a>
-      <a href="/signin">ログイン</a>
-    <% else %>
-      <a href="/home">
-      <% unless current_user.profile_image=="" %>
-        <img src="<%= current_user.profile_image %>" alt="home" style="width:40px;height:40px;">
+    <div class="left-content">
+      <a href="/">SAKUHINSHU</a>
+    </div>
+    <div class="right-content">
+      <% if current_user.nil? %>
+        <a href="/signup">新規登録</a>
+        <a href="/signin">ログイン</a>
       <% else %>
-        <img src="/assets/imgs/user.png" alt="home">
+        <a href="/home">
+        <% unless current_user.profile_image=="" %>
+          <img src="<%= current_user.profile_image %>" alt="home" style="width:40px;height:40px;">
+        <% else %>
+          <img src="/assets/imgs/user.png" alt="home">
+        <% end %>
+        </a>
+        <a href="/new">投稿する</a>
+        <a href="/signout">ログアウト</a>
       <% end %>
-      </a>
-      <a href="/search">search</a>
-      <a href="/signout">logout</a>
-    <% end %>
+    </div>
   </nav>
   <%= yield %>
 </body>

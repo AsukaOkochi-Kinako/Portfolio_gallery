@@ -1,0 +1,9 @@
+<section class="center-vertical">
+  <h2>あなたのポートフォリオを投稿</h2>
+  <form action="/new" method="post">
+    <input type="text" name="site_name" placeholder="サイト名" value="<%= current_user.name %>のポートフォリオ">
+    <input type="url" name="site_url" placeholder="URL">
+    <input type="text" name="site_about" placeholder="コメント">
+    <input type="submit" value="投稿">
+  </form>
+</section>
