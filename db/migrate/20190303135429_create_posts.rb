@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :site_name
       t.string :site_url
       t.string :site_about
-      t.string :comment
+      t.text :comment
       t.integer :favorite
     end
   end

@@ -21,6 +21,7 @@ helpers do
 end
 
 get '/' do
+  @posts = Post.all
   erb :index
 end
 
@@ -68,6 +69,19 @@ get '/new' do
 end
 
 post '/new' do
-  Post.create(site_name: params[:site_name],site_url: params[:site_url],site_about: params[:site_about],post_user: current_user.name)
+  Post.create(site_name: params[:site_name],site_url: params[:site_url],site_about: params[:site_about],user_id: current_user.id, post_user: current_user.name)
   redirect '/'
+end
+
+get '/search' do
+  keyword = params[:keyword]
+  Post.where(site_name: "<% @keyword %>")
+  erb :search
+end
+
+post '/edit/:id' do
+  post = Post.find(params[:id])
+  post.comment = params[:comment]
+  post.save
+  redirect "post/:id"
 end

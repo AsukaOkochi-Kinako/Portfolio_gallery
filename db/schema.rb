@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_03_03_135429) do
     t.string "site_name"
     t.string "site_url"
     t.string "site_about"
-    t.string "comment"
+    t.text "comment"
     t.integer "favorite"
   end
 

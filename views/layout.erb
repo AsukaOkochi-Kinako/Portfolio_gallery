@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SAKUHINSHU</title>
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:600" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Sawarabi+Gothic" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicon-16x16.png">
 
 </head>
 <body>
+  <a href="#">
   <nav class="center-hrizontal">
     <div class="left-content">
       <a href="/">SAKUHINSHU</a>
@@ -20,18 +23,16 @@
         <a href="/signup">新規登録</a>
         <a href="/signin">ログイン</a>
       <% else %>
-        <a href="/home">
-        <% unless current_user.profile_image=="" %>
-          <img src="<%= current_user.profile_image %>" alt="home" style="width:40px;height:40px;">
-        <% else %>
-          <img src="/assets/imgs/user.png" alt="home">
-        <% end %>
-        </a>
-        <a href="/new">投稿する</a>
-        <a href="/signout">ログアウト</a>
+        <%# ここにプロフィールへのリンクが入る %>
+
+        <a href="/new"><i class="far fa-edit"></i></a>
+        <a href="/search"><i class="fas fa-search"></i></a>
       <% end %>
     </div>
   </nav>
   <%= yield %>
+  <footer>
+    <a href="/signout">ログアウト</a>
+  </footer>
 </body>
 </html>
