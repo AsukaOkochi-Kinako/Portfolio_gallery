@@ -85,3 +85,8 @@ post '/edit/:id' do
   post.save
   redirect "post/:id"
 end
+
+get '/post/:id' do
+  @post = Post.find(params[:id])
+  erb :post
+end
