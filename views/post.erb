@@ -1,8 +1,13 @@
-<div class="post center-vertical">
-  <img src="http://capture.heartrails.com/200x130/border?<%= @post.site_url %>" alt="<%= CGI.escapeHTML(@post.site_name) %>">
-  <p><%= CGI.escapeHTML(@post.site_name) %></p>
+<div class="center-vertical">
+  <h2><%= CGI.escapeHTML(@post.site_name) %></h2>
+  <img class="post-image" src="http://capture.heartrails.com?<%= @post.site_url %>" alt="<%= CGI.escapeHTML(@post.site_name) %>">
   <p><%= CGI.escapeHTML(@post.site_about) %></p>
-  <p>投稿者:<%= CGI.escapeHTML(@post.post_user) %></p>
+
+  <div class="post-user">
+    <img src="" alt="<%= @post.post_user %>のアイコン">
+    <p>Create by <%= CGI.escapeHTML(@post.post_user) %></p>
+  </div>
+
   <div>
     共有する
     <a class="sns-icon" target="_blank" href="https://twitter.com/share?url=<%= @post.site_url %>&text=<%= @post.site_name %>"><i class="fab fa-twitter-square"></i><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></a>
