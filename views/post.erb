@@ -1,9 +1,11 @@
-<div class="center-vertical">
+<div class="center-vertical post-user">
   <h2><%= CGI.escapeHTML(@post.site_name) %></h2>
-  <img class="post-image" src="http://capture.heartrails.com?<%= @post.site_url %>" alt="<%= CGI.escapeHTML(@post.site_name) %>">
-  <p><%= CGI.escapeHTML(@post.site_about) %></p>
+  <a href="<%= @post.site_url %>" target="_blank">
+    <img class="post-image" src="http://capture.heartrails.com/400x300/border?<%= @post.site_url %>" alt="<%= CGI.escapeHTML(@post.site_name) %>">
+  </a>
+  <p class="post-container"><%= CGI.escapeHTML(@post.site_about) %></p>
 
-  <div class="post-user">
+  <div>
     <img src="" alt="<%= @post.post_user %>のアイコン">
     <p>Create by <%= CGI.escapeHTML(@post.post_user) %></p>
   </div>

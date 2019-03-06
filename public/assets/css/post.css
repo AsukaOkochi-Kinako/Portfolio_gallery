@@ -1,0 +1,26 @@
+.post-container {
+  display: flex;
+  width: 40vw;
+  margin: 0 auto;
+  word-break: break-all;
+}
+
+.post-image {
+  width: 40vw;
+  transition: 0.2s;
+}
+
+.post-image:hover {
+  transition: 0.2s;
+  opacity: 0.6;
+}
+
+@media(max-width:425px) {
+  .post-container {
+    width: 80vw;
+  }
+
+  .post-image {
+    width: 80vw;
+  }
+}
