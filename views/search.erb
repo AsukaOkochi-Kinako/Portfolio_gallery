@@ -1,0 +1,28 @@
+<section class="center-vertical">
+  <h1>検索結果</h1>
+  <div class="center-hrizontal">
+    <% if !@posts.nil? %>
+      <div class="center-vertical">
+          <div class="center-hrizontal">
+            <% @posts.each do |post| %>
+              <a href="/post/<%= post.id %>" class="post-link">
+                <div class="post center-vertical">
+                  <img src="http://capture.heartrails.com/200x130/border?<%= post.site_url %>" alt="<%= CGI.escapeHTML(post.site_name) %>">
+                  <p><%= CGI.escapeHTML(post.site_name) %></p>
+                  <p><%= CGI.escapeHTML(post.site_about) %></p>
+                  <p>投稿者:<%= CGI.escapeHTML(post.post_user) %></p>
+                  <div>
+                    共有する
+                    <a class="sns-icon" target="_blank" href="https://twitter.com/share?url=<%= post.site_url %>&text=<%= post.site_name %>"><i class="fab fa-twitter-square"></i><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></a>
+                    <a class="sns-icon" target="_blank" href="http://www.facebook.com/share.php?u=<%= post.site_url %>&t=<%= post.site_name %>：" rel="nofollow"><i class="fab fa-facebook-square"></i></a>
+                  </div>
+                </div>
+              </a>
+            <% end %>
+          </div>
+      </div>
+    <% else %>
+      投稿がありません
+    <% end %>
+  </div>
+</section>
