@@ -71,6 +71,18 @@
     flex-wrap: wrap;
   }
 
+  /* new */
+  .portfolio-new {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio-new input,
+  .portfolio-new textarea {
+    width: 20vw;
+    margin: 0.5rem auto;
+  }
+
   /* post */
   .post {
     background: #fff;
