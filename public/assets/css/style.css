@@ -5,6 +5,21 @@
     line-height: 1.75rem;
   }
 
+  .submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.25rem 0 2rem;
+    width: 300px;
+    height: 30px;
+    border-radius: 1rem;
+  }
+
+  .submit-btn:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
   h1,
   h2,
   h3,
@@ -71,6 +86,11 @@
     flex-wrap: wrap;
   }
 
+  /* index */
+  .search-form input {
+    width: 20vw;
+  }
+
   /* new */
   .portfolio-new {
     display: flex;
@@ -117,7 +137,7 @@
     color: #305097;
   }
 
-  /* フッター */
+  /* footer */
   footer {
     display: flex;
     background-color: #fff;
