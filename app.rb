@@ -74,9 +74,8 @@ post '/new' do
 end
 
 get '/search' do
-  @post = Post.find(params[:id])
   keyword = params[:keyword]
-  Post.where(site_name: "<% @keyword %>")
+  Post.where("site_name", keyword)
   erb :search
 end
 
