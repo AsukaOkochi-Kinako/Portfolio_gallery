@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Sawarabi+Gothic" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/sp.css">
   <link rel="stylesheet" href="/assets/css/post.css">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicon-16x16.png">
 
@@ -33,7 +34,12 @@
   </nav>
   <%= yield %>
   <footer>
-    <a href="/signout">ログアウト</a>
+    <% if current_user.nil? %>
+
+    <% else %>
+      <a href="/signout">ログアウト</a><br>
+    <% end %>
+    &copy;2019 AsukaOkochi
   </footer>
 </body>
 </html>

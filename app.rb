@@ -75,7 +75,7 @@ end
 
 get '/search' do
   keyword = params[:keyword]
-  Post.where("site_name", keyword)
+  @posts = Post.where(site_name: keyword)
   erb :search
 end
 

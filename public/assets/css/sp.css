@@ -1,0 +1,26 @@
+@media(max-width:425px) {
+
+  .signup input,
+  .signin input {
+    width: 80vw;
+    height: 3rem;
+    margin: 0.25rem 0;
+  }
+
+  /* index */
+  .search-form input {
+    width: 80vw;
+    height: 3rem;
+  }
+
+  .portfolio-new input,
+  .portfolio-new textarea {
+    width: 80vw;
+    height: 3rem;
+    margin: 0.5rem auto;
+  }
+
+  .submit-btn {
+    border-radius: 3rem;
+  }
+}
