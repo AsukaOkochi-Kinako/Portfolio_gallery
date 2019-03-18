@@ -85,6 +85,12 @@
     flex-wrap: wrap;
   }
 
+  .signup input,
+  .signin input {
+    margin: 0.25rem 0;
+    width: 20vw;
+  }
+
   /* index */
   .search-form input {
     width: 20vw;
@@ -97,7 +103,8 @@
   }
 
   .portfolio-new input,
-  .portfolio-new textarea {
+  .portfolio-new textarea,
+    {
     width: 20vw;
     margin: 0.5rem auto;
   }

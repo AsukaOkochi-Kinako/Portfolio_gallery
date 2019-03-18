@@ -74,8 +74,9 @@ post '/new' do
 end
 
 get '/search' do
+  @posts = Post.all
   keyword = params[:keyword]
-  @posts = Post.where(site_name: keyword)
+  @searchs = Post.where(site_about: keyword)
   erb :search
 end
 

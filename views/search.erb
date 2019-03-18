@@ -4,7 +4,7 @@
     <% if !@posts.nil? %>
       <div class="center-vertical">
           <div class="center-hrizontal">
-            <% @posts.each do |post| %>
+            <% @searchs.each do |post| %>
               <a href="/post/<%= post.id %>" class="post-link">
                 <div class="post center-vertical">
                   <img src="http://capture.heartrails.com/200x130/border?<%= post.site_url %>" alt="<%= CGI.escapeHTML(post.site_name) %>">
